@@ -1,3 +1,4 @@
+package SimpleChat;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
@@ -37,7 +38,7 @@ public class SimpleChatServerHandler extends SimpleChannelInboundHandler<String>
         channels.remove(ctx.channel());
     }
 
-    protected void messageReceived(ChannelHandlerContext ctx, String s) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, String s) throws Exception {
         Channel incoming = ctx.channel();
         Iterator var4 = channels.iterator();
 
